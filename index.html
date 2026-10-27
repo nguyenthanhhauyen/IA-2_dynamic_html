@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catalogue — session 4 starter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- PART A: this page is all <div>. Give every box the element that says
+       what it is. Keep every id and class: style.css and app.js use them. -->
+
+  <div class="toolbar">
+    <div class="brand">Shop</div>
+    <div class="menu">
+      <a href="#">Catalogue</a>
+      <a href="#" class="cart-link">Cart (<span id="cart-count">0</span>)<span id="cart-total"></span></a>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="title">Catalogue</div>
+
+    <div class="search">
+      <div class="search-label">Search products</div>
+      <input id="q" name="q" type="text">
+      <div class="button">Search</div>
+    </div>
+
+    <div class="status" id="status"></div>
+
+    <div class="catalogue" id="catalogue">
+      <div class="card" data-id="tshirt" data-price="180000">
+        <div class="name">T-shirt</div>
+        <div class="price">180.000 đ</div>
+        <div class="stock">In stock</div>
+        <div class="button add">Add</div>
+      </div>
+      <div class="card" data-id="hoodie" data-price="420000">
+        <div class="name">Hoodie</div>
+        <div class="price">420.000 đ</div>
+        <div class="stock">In stock</div>
+        <div class="button add">Add</div>
+      </div>
+      <div class="card" data-id="somi" data-price="350000">
+        <div class="name">Áo sơ mi tay dài kẻ sọc xanh navy</div>
+        <div class="price">350.000 đ</div>
+        <div class="stock">Low stock</div>
+        <div class="button add">Add</div>
+      </div>
+      <div class="card" data-id="cap" data-price="95000">
+        <div class="name">Cap</div>
+        <div class="price">95.000 đ</div>
+        <div class="stock">In stock</div>
+        <div class="button add">Add</div>
+      </div>
+      <div class="card" data-id="tote" data-price="120000">
+        <div class="name">Tote bag</div>
+        <div class="price">120.000 đ</div>
+        <div class="stock">Sold out</div>
+        <div class="button add disabled">Add</div>
+      </div>
+      <div class="card" data-id="socks" data-price="75000">
+        <div class="name">Socks, 3 pairs</div>
+        <div class="price">75.000 đ</div>
+        <div class="stock">In stock</div>
+        <div class="button add">Add</div>
+      </div>
+      <div class="card" data-id="jacket" data-price="890000">
+        <div class="name">Jacket</div>
+        <div class="price">890.000 đ</div>
+        <div class="stock">In stock</div>
+        <div class="button add">Add</div>
+      </div>
+      <div class="card" data-id="scarf" data-price="160000">
+        <div class="name">Scarf</div>
+        <div class="price">160.000 đ</div>
+        <div class="stock">In stock</div>
+        <div class="button add">Add</div>
+      </div>
+    </div>
+
+    <div class="more">
+      <div class="button" id="load-more">Load more</div>
+    </div>
+  </div>
+
+  <div class="footer">CSC13008 · Session 4 · Shop is a teaching example, not a real store.</div>
+
+  <!-- "Load more" copies this card for each new product (see app.js).
+       It is part of the page too: change it the same way as the cards above. -->
+  <template id="card-template">
+    <div class="card" data-id="" data-price="">
+      <div class="name"></div>
+      <div class="price"></div>
+      <div class="stock"></div>
+      <div class="button add">Add</div>
+    </div>
+  </template>
+
+  <script src="app.js" defer></script>
+  <script src="check.js" defer></script>
+</body>
+</html>

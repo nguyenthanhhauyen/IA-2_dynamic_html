@@ -1,0 +1,76 @@
+/* Session 4 starter — same scale and colours as the session 3 catalogue.
+   Every rule targets a CLASS, never a tag, so the page looks the same before
+   and after you change <div> into the right elements. You should not need to
+   edit this file. */
+:root {
+  --space-1: 4px;  --space-2: 8px;  --space-3: 16px;
+  --space-4: 24px; --space-5: 40px; --space-6: 64px;
+  --ink: #1b1f24; --muted: #59636e; --line: #d0d7de; --accent: #0b5cad;
+  --focus: #b4571a;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; font: 16px/1.5 system-ui, sans-serif; color: var(--ink); }
+img { max-width: 100%; }
+
+/* The browser hides [hidden] with display:none, but any class that sets
+   display (like .card below) wins over it. This line makes `hidden` win. */
+[hidden] { display: none !important; }
+
+/* Make keyboard focus easy to see on the projector. */
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+.toolbar {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: var(--space-3); padding: var(--space-3);
+  border-bottom: 1px solid var(--line);
+}
+.brand { margin: 0; font-weight: 700; color: var(--ink); text-decoration: none; }
+.menu { display: flex; gap: var(--space-3); }
+.menu a { color: var(--accent); padding: var(--space-2) 0; }
+
+.page { display: block; max-width: 1200px; margin: 0 auto; padding: var(--space-4) var(--space-3); }
+.title { margin: 0 0 var(--space-4); font-size: 32px; font-weight: 700; line-height: 1.25; }
+
+.search {
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: var(--space-2) var(--space-3); margin: 0 0 var(--space-3);
+}
+.search-label { display: block; width: 100%; margin: 0; font-weight: 600; }
+.search input {
+  flex: 1 1 240px; min-height: 44px; padding: 0 var(--space-3);
+  border: 1px solid var(--muted); border-radius: 6px; font: inherit;
+}
+.status { min-height: 24px; margin: 0 0 var(--space-4); color: var(--muted); }
+
+.catalogue {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: 1fr; gap: var(--space-4);
+}
+.card {
+  display: flex; flex-direction: column;
+  padding: var(--space-4); border: 1px solid var(--line); border-radius: 8px;
+}
+.name { margin: 0; font-size: 18px; font-weight: 600; line-height: 1.5; }
+.price { margin: var(--space-2) 0 0; color: var(--muted); }
+.stock { margin: var(--space-4) 0 0; color: var(--muted); }
+
+/* One look for every button, whether it is a <div> or a <button>. */
+.button {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 44px; padding: 0 var(--space-4); margin: 0;
+  border: 0; border-radius: 6px; cursor: pointer;
+  background: var(--accent); color: #fff; font: inherit;
+}
+.card .button { margin-top: var(--space-3); }
+.button.disabled, .button:disabled { background: var(--line); color: var(--muted); cursor: not-allowed; }
+
+.more { display: flex; justify-content: center; margin: var(--space-5) 0 0; }
+
+.footer {
+  display: block; margin: var(--space-6) 0 0; padding: var(--space-4) var(--space-3);
+  border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; text-align: center;
+}
+
+@media (min-width: 640px)  { .catalogue { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .catalogue { grid-template-columns: repeat(4, 1fr); } }
